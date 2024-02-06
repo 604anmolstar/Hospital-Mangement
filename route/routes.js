@@ -8,9 +8,11 @@ const router = express.Router()
 // const recordController= require('../controller/recordController')
 // const patientController = require('../controller/patientController')
 
-const { createDoctor } = require("../controller/doctorContoller")
+const { createDoctor, findSingleDoctor} = require("../controller/doctorContoller")
 
 
-router.post("/doctor",createDoctor)
+router.post("/doctors",createDoctor)
+// router.get("/doctor",getDoctor)
+router.get("/doctor/:id",findSingleDoctor)
 
 module.exports = router 

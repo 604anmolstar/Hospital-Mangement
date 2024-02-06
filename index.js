@@ -1,8 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const doctorRoute = require('./route/routes')
-
-
 const app = express()
 app.use(express.json())
 mongoose.connect("mongodb+srv://604anmolstar:hospital-management@hospital-management.un0klgq.mongodb.net/"

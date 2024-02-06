@@ -7,7 +7,8 @@ const doctorSchema = new mongoose.Schema({
     },
     email: {
         type: mongoose.Schema.Types.String,
-        required: true
+        required: true,
+        unique: true
     },
     phone: {
         type: mongoose.Schema.Types.Number,
@@ -26,7 +27,10 @@ const doctorSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.String,
         // ref: 'Hospital',
         required: true
-    }
+    },
+    
+},{
+    timestamps: true
 })
 
-module.exports = mongoose.model('Doctor', doctorSchema)
+module.exports = new mongoose.model('Doctor', doctorSchema,"doctors")
